@@ -1,7 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
  * Copyright (C) 2022-2025 crDroid Android Project
- *               2023-2024 the risingOS Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,8 +33,6 @@ import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.GameOptimizationManager
 import io.chaldeaprjkt.gamespace.preferences.AppListPreferences
 import io.chaldeaprjkt.gamespace.preferences.appselector.AppSelectorActivity
-import io.chaldeaprjkt.gamespace.preferences.QuickStartAppPreference
-import io.chaldeaprjkt.gamespace.preferences.QuickStartAppPreferenceDialogFragment
 import javax.inject.Inject
 
 @AndroidEntryPoint(SettingsBasePreferenceFragment::class)
@@ -105,16 +102,6 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
     override fun onResume() {
         super.onResume()
         apps?.updateAppList()
-    }
-
-    override fun onDisplayPreferenceDialog(preference: Preference) {
-        if (preference is QuickStartAppPreference) {
-            val dialogFragment = QuickStartAppPreferenceDialogFragment.newInstance(preference.key)
-            dialogFragment.setTargetFragment(this, 0)
-            dialogFragment.show(parentFragmentManager, "QuickStartAppPreferenceDialogFragment")
-        } else {
-            super.onDisplayPreferenceDialog(preference)
-        }
     }
 
     override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
