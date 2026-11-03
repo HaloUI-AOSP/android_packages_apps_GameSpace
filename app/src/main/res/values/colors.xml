@@ -10,6 +10,14 @@
     <color name="onPrimary">@android:color/system_neutral1_900</color>
     <color name="onSurface">@android:color/system_neutral1_900</color>
 
+    <color name="libraryBackground">@android:color/system_background_light</color>
+    <color name="libraryPrimary">@android:color/system_primary_light</color>
+    <color name="libraryOnPrimary">@android:color/system_on_primary_light</color>
+    <color name="librarySecondaryContainer">@android:color/system_secondary_container_light</color>
+    <color name="libraryOnSecondaryContainer">@android:color/system_on_secondary_container_light</color>
+    <color name="librarySurfaceContainerHigh">@android:color/system_surface_container_high_light</color>
+    <color name="libraryControlHighlight">@android:color/system_control_highlight_light</color>
+
     <color name="barBackgroundCollapsed">@android:color/system_neutral1_50</color>
     <color name="barBackgroundExpanded">@android:color/system_neutral1_50</color>
     <color name="barButtonAccent">@android:color/system_accent1_600</color>

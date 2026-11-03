@@ -22,11 +22,11 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.os.BatteryManager
 import android.util.AttributeSet
 import android.widget.TextView
 
 import io.chaldeaprjkt.gamespace.R
+import io.chaldeaprjkt.gamespace.utils.batteryReadingOf
 
 @SuppressLint("AppCompatCustomView")
 class BatteryView @JvmOverloads constructor(
@@ -38,21 +38,14 @@ class BatteryView @JvmOverloads constructor(
 
     private val batteryChangeReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            if (intent.action == Intent.ACTION_BATTERY_CHANGED) {
-                val level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0)
-                val scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, 0)
-                val percent = (level.toFloat() / scale * 100).toInt()
-                text = context.getString(R.string.battery_format, percent)
-            }
+            render(intent)
         }
     }
 
-    init {
-        val batteryManager = context.getSystemService(BatteryManager::class.java)!!
-        text = context.getString(
-            R.string.battery_format,
-            batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
-        )
+    private fun render(intent: Intent) {
+        val reading = batteryReadingOf(intent) ?: return
+        text = context.getString(R.string.battery_percentage, reading.percentage)
+        setCompoundDrawablesWithIntrinsicBounds(reading.icon, 0, 0, 0)
     }
 
     override fun onAttachedToWindow() {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-FileCopyrightText: 2026 haloUI-AOSP
+    SPDX-License-Identifier: Apache-2.0
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/coverflow_tile_width"
+    android:layout_height="@dimen/coverflow_tile_height"
+    android:layout_marginStart="@dimen/coverflow_tile_spacing"
+    android:layout_marginEnd="@dimen/coverflow_tile_spacing"
+    android:background="@drawable/cover_tile_bg"
+    android:backgroundTint="@color/librarySurfaceContainerHigh">
+
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/cover_banner_clip"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@android:id/icon"
+        android:layout_width="@dimen/coverflow_icon_size"
+        android:layout_height="@dimen/coverflow_icon_size"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter" />
+</FrameLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-FileCopyrightText: 2026 haloUI-AOSP
+    SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <dimen name="coverflow_tile_width">400dp</dimen>
+    <dimen name="coverflow_tile_height">225dp</dimen>
+    <dimen name="coverflow_icon_size">129dp</dimen>
+</resources>

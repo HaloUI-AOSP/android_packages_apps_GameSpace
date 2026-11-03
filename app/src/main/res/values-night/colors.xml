@@ -16,4 +16,12 @@
     <color name="barButtonRipple">@android:color/system_accent2_50</color>
     <color name="onBarBackground">@android:color/system_neutral1_1000</color>
     <color name="onBarBackgroundText">@android:color/system_neutral1_0</color>
+
+    <color name="libraryBackground">@android:color/system_background_dark</color>
+    <color name="libraryPrimary">@android:color/system_primary_dark</color>
+    <color name="libraryOnPrimary">@android:color/system_on_primary_dark</color>
+    <color name="librarySecondaryContainer">@android:color/system_secondary_container_dark</color>
+    <color name="libraryOnSecondaryContainer">@android:color/system_on_secondary_container_dark</color>
+    <color name="librarySurfaceContainerHigh">@android:color/system_surface_container_high_dark</color>
+    <color name="libraryControlHighlight">@android:color/system_control_highlight_dark</color>
 </resources>

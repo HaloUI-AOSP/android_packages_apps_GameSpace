@@ -18,6 +18,11 @@
 <resources>
     <dimen name="actions_size">36dp</dimen>
 
+    <dimen name="coverflow_tile_width">224dp</dimen>
+    <dimen name="coverflow_tile_height">126dp</dimen>
+    <dimen name="coverflow_icon_size">72dp</dimen>
+    <dimen name="coverflow_tile_spacing">2dp</dimen>
+
     <dimen name="notification_vertical_offset_landscape">48dp</dimen>
     <dimen name="notification_vertical_offset_portrait">36dp</dimen>
 </resources>

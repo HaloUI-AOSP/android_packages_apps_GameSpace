@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-FileCopyrightText: 2026 haloUI-AOSP
+    SPDX-License-Identifier: Apache-2.0
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="12dp"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="end|center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="sans-serif-medium"
+                android:format12Hour="h:mm a"
+                android:format24Hour="HH:mm"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="20sp" />
+
+            <io.chaldeaprjkt.gamespace.widget.BatteryView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:drawablePadding="6dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="15sp" />
+
+            <ImageButton
+                android:id="@+id/settings_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/library_icon_circle"
+                android:contentDescription="@string/settings_title"
+                android:defaultFocusHighlightEnabled="false"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_gear" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/library_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <io.chaldeaprjkt.gamespace.library.CoverflowCarousel
+                android:id="@+id/coverflow"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/coverflow_tile_height"
+                android:clipToPadding="false"
+                android:defaultFocusHighlightEnabled="false"
+                android:descendantFocusability="blocksDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <TextView
+                android:id="@+id/game_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/game_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/libraryPrimary"
+                android:textSize="14sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/game_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:background="@drawable/library_button_tonal"
+                    android:defaultFocusHighlightEnabled="false"
+                    android:minWidth="144dp"
+                    android:paddingStart="36dp"
+                    android:paddingEnd="36dp"
+                    android:text="@string/game_settings_button_title"
+                    android:textAllCaps="false"
+                    android:textColor="@color/libraryOnSecondaryContainer"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/library_button_filled"
+                    android:defaultFocusHighlightEnabled="false"
+                    android:fontFamily="sans-serif-medium"
+                    android:minWidth="144dp"
+                    android:paddingStart="36dp"
+                    android:paddingEnd="36dp"
+                    android:text="@string/play_button_title"
+                    android:textAllCaps="false"
+                    android:textColor="@color/libraryOnPrimary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/library_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/library_empty_title"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/library_empty_summary"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/add_games"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/library_button_tonal"
+            android:defaultFocusHighlightEnabled="false"
+            android:minWidth="176dp"
+            android:paddingStart="36dp"
+            android:paddingEnd="36dp"
+            android:text="@string/add_games_button_title"
+            android:textAllCaps="false"
+            android:textColor="@color/libraryOnSecondaryContainer"
+            android:textSize="15sp" />
+    </LinearLayout>
+</FrameLayout>

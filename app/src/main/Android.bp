@@ -19,7 +19,9 @@ android_app {
     },
     static_libs: [
         "androidx.core_core-ktx",
+        "androidx.activity_activity",
         "androidx.appcompat_appcompat",
+        "androidx.recyclerview_recyclerview",
         "androidx.preference_preference",
         "com.google.android.material_material",
         "kotlin-stdlib",
@@ -44,7 +46,7 @@ android_app {
         "-Xjvm-default=all",
         "-opt-in=kotlin.Experimental",
         "-opt-in=kotlin.ExperimentalStdlibApi",
-        "-Xopt-in=kotlin.RequiresOptIn",
+        "-opt-in=kotlin.RequiresOptIn",
         "-P plugin:androidx.compose.compiler.plugins.kotlin:sourceInformation=true",
     ],
     plugins: [

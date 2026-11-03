@@ -18,6 +18,13 @@
 
     <style name="GameSpaceTheme" parent="Theme.SubSettingsBase.Expressive" />
 
+    <style name="GameSpaceTheme.Library" parent="@android:style/Theme.DeviceDefault.DayNight">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/libraryBackground</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">always</item>
+    </style>
+
     <style name="GameSpaceTheme.GameBar" parent="Theme.SubSettingsBase.Expressive">
         <item name="android:buttonStyle">@style/GameSpaceTheme.FlatButton</item>
         <item name="android:imageButtonStyle">@style/GameSpaceTheme.FlatButton</item>

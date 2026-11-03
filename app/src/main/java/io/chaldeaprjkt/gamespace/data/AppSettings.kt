@@ -86,6 +86,10 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getBoolean(KEY_AUTO_DND_ENABLED, false)
         set(value) = db.edit().putBoolean(KEY_AUTO_DND_ENABLED, value).apply()
 
+    var lastGame
+        get() = db.getString(KEY_LAST_GAME, null)
+        set(packageName) = db.edit().putString(KEY_LAST_GAME, packageName).apply()
+
     companion object {
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
         const val KEY_3SCREENSHOT_DISABLE = "gamespace_tfgesture_disabled"
@@ -98,5 +102,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_LOCK_GESTURE = "gamespace_lock_gesture"
         const val KEY_CALL_OVERLAY_ENABLED = "call_overlay_enabled"
         const val KEY_AUTO_DND_ENABLED = "gamespace_auto_dnd_enabled"
+        const val KEY_LAST_GAME = "gamespace_last_game"
     }
 }
